@@ -81,3 +81,12 @@ $44.99
 An excellent primer on R, this book covers the field from basic
 statistics to graphics.
 
+Ggplot2: Elegant Graphics for Data Analysis
+By Hadley Wickham
+Springer-Verlag
+ISBN13 9780387981406 
+$57.34
+
+I haven't read it, but it's by Hadley. He wrote ggplot2 AND dplyr. It's
+got to be great.
+
