@@ -135,26 +135,25 @@ at a snapshot of annual numbers: just the June data from every year. To do that
 we'll filter the data using the wonderful dplyr package.
 
 > library(dplyr)
-> juneecon <- economics %>%  # shift return
-	filter(month==6)
+> juneecon <- economics[which(as.numeric(format(economics$date, "%m"))==6),]  # shift return
 > View(juneecon)
 
 Now we have a new data frame consisting just of economic data collected every
 June from 1967 through 2007. 
 
-> ggplot(juneecon, aes(x=year, y=unemploy)) + geom_bar(stat="identity")
+> ggplot(juneecon, aes(x=date, y=unemploy)) + geom_bar(stat="identity")
 
 The command geom_bar(stat="identity") tells the bar chart to take the values (or
 identities) that we've assigned.
 
 We can change the colors of the bar easily.
 
-> ggplot(juneecon, aes(x=year, y=unemploy)) + geom_bar(stat="identity",
+> ggplot(juneecon, aes(x=date, y=unemploy)) + geom_bar(stat="identity",
 fill="lightblue", color="black")
 
 We can also add labels for the axes.
 
-> ggplot(juneecon, aes(x=year, y=unemploy)) + geom_bar(stat="identity",
+> ggplot(juneecon, aes(x=date, y=unemploy)) + geom_bar(stat="identity",
 fill="lightblue", color="black") + xlab("Year") + ylab("Unemployed (000)")
 
 Let's return to the Midwestern county data. Take another look at it.
